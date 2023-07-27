@@ -1,4 +1,9 @@
 function calcularMDC(primeiroNumero, segundoNumero){
+
+    if(primeiroNumero === undefined || segundoNumero === undefined){
+        throw new Error('Ambos os números devem ser informados para cálculo do MDC');
+    }
+
     // Garantir que vai pegar número positivo
     primeiroNumero = Math.abs(primeiroNumero);
     segundoNumero = Math.abs(segundoNumero);
@@ -19,7 +24,4 @@ function calcularMDC(primeiroNumero, segundoNumero){
     return dividendo; // Quando o divisor é igual a 0, o dividendo vai estar com o último resto não nulo das divisões sucessivas e este valor é o MDC dos números analisados
 }
 
-console.log(calcularMDC(60, 18))
-console.log(calcularMDC(20, 24))
-console.log(calcularMDC(144, 60))
-console.log(calcularMDC(23732, 180))
+module.exports = {calcularMDC}
